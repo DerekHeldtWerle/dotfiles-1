@@ -8,10 +8,23 @@ setopt AUTO_NAME_DIRS       # Auto add variable-stored paths to ~ list.
 setopt MULTIOS              # Write to multiple descriptors.
 setopt EXTENDED_GLOB        # Use extended globbing syntax.
 
+# Share history between sessions
+HISTFILE=~/.history
+HISTSIZE=10000
+SAVEHIST=10000
+
+setopt SHARE_HISTORY
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt EXTENDED_HISTORY
+setopt HIST_IGNORE_SPACE
+
+
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+#zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+
 
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search"
@@ -38,3 +51,4 @@ done
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+eval "$(jenv init -)"

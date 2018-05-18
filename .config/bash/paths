@@ -2,6 +2,6 @@ PATH=~/bin:$PATH
 PATH=/usr/local/bin:$PATH
 PATH=/usr/local/sbin:$PATH
 PATH=$GOPATH/bin:$PATH
-PATH=~/.cargo/bin:$PATH
+PATH="$HOME/.jenv/bin:$PATH"
 export PATH
 

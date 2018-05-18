@@ -8,6 +8,7 @@ export PIP_REQUIRE_VIRTUALENV=false
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 export EDITOR=nvim
 
+export HISTCONTROL=ignoreboth:erasedups
 export BASE=~/code
 export SRC=${BASE}/src
 export GOPATH=${BASE}

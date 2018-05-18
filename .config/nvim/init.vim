@@ -5,6 +5,13 @@ filetype plugin indent on
 
 let mapleader = ","
 
+
+"""""""""""""""""""""""""""
+" Python Setup
+"""""""""""""""""""""""""""
+let g:python_host_prog = '/Users/dheldt/code/vev2/bin/python'
+let g:python3_host_prog = '/Users/dheldt/code/vev3/bin/python'
+
 """""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""
@@ -269,7 +276,7 @@ nnoremap <leader>tag :TagbarOpen fjc<cr>
 
 Plug 'ludovicchabant/vim-gutentags'
 let g:gutentags_enabled = 0
-let g:gutentags_exclude = [
+let g:gutentags_ctags_exclude = [
   \ '*.min.js',
   \ '*html*',
   \ '*/vendor/*',
@@ -375,7 +382,7 @@ autocmd FileType json setlocal foldmethod=syntax
 
 Plug 'derekwyatt/vim-scala', {'for': ['scala', 'sbt.scala']}
 Plug 'ensime/ensime-vim', {'for': ['scala', 'java', 'sbt.scala']}
-autocmd BufWritePost *.scala silent :EnTypeCheck
+" autocmd BufWritePost *.scala silent :EnTypeCheck
 nnoremap <localleader>tc :EnTypeCheck<CR>
 nnoremap <localleader>ti :EnInspectCheck<CR>
 nnoremap <localleader>tp :EnTypeCheck<CR>

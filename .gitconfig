@@ -1,6 +1,6 @@
 [user]
-	email = tkinsley.9@gmail.com
-	name = Tony Kinsley
+	email = derek.dhw@gmail.com
+	name = Derek Heldt-Werle
 [push]
 	default = simple
 [merge]
@@ -26,9 +26,10 @@
     lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
     lg = !"git lg1"
     sc = show --pretty="" --name-only
+    open = !open $(git remote -v | grep -e '^origin.*(fetch)$' | awk '{print $2}' | sed -E 's/.*@([[:alnum:]\\.-]*):([[:alnum:]-]*)\\/([[:alnum:]-]*)(\\.git)?/https:\\/\\/\\1\\/\\2\\/\\3/')
 [filter "lfs"]
 	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
+    smudge = git-lfs smudge %f
 	required = true
 [hub]
 	host = git.viasat.com
